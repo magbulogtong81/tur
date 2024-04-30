@@ -2,9 +2,9 @@ TERMUX_PKG_HOMEPAGE=https://github.com/pola-rs/polars
 TERMUX_PKG_DESCRIPTION="Dataframes powered by a multithreaded, vectorized query engine, written in Rust"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux-user-repository"
-TERMUX_PKG_VERSION="0.20.19"
+TERMUX_PKG_VERSION="0.20.23"
 TERMUX_PKG_SRCURL=https://github.com/pola-rs/polars/releases/download/py-$TERMUX_PKG_VERSION/polars-$TERMUX_PKG_VERSION.tar.gz
-TERMUX_PKG_SHA256=58f9c3766c6fa3d7193364cfcf93c6c640e6c8e6a49ad8c6fd48b326ad8060f2
+TERMUX_PKG_SHA256=4503c446c7771d5b52d5bff4f2dbf2e999a87a1cc3c89931db255cff43218436
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_DEPENDS="libc++, python"
 TERMUX_PKG_PYTHON_COMMON_DEPS="wheel"
@@ -98,7 +98,7 @@ termux_step_make_install() {
 
 	build-python -m maturin build --release --skip-auditwheel --target $CARGO_BUILD_TARGET
 
-	pip install --no-deps ./target/wheels/*.whl --prefix $TERMUX_PREFIX 
+	pip install --no-deps ./target/wheels/*.whl --prefix $TERMUX_PREFIX
 }
 
 termux_step_post_make_install() {

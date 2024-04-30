@@ -2,9 +2,9 @@ TERMUX_PKG_HOMEPAGE=https://www.chromium.org/Home
 TERMUX_PKG_DESCRIPTION="Chromium web browser"
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="Chongyun Lee <uchkks@protonmail.com>"
-TERMUX_PKG_VERSION=123.0.6312.105
+TERMUX_PKG_VERSION=124.0.6367.60
 TERMUX_PKG_SRCURL=https://commondatastorage.googleapis.com/chromium-browser-official/chromium-$TERMUX_PKG_VERSION.tar.xz
-TERMUX_PKG_SHA256=0a14fba1fb1a288d99b188160e3138295aa8604bdf492e62a94c0ec35a4e229d
+TERMUX_PKG_SHA256=ebd553527149cb8477a522df90acd6cea2388a6f431e2db589a0301df1d0cae2
 TERMUX_PKG_DEPENDS="atk, cups, dbus, gtk3, krb5, libc++, libevdev, libxkbcommon, libminizip, libnss, libwayland, libx11, mesa, openssl, pango, pulseaudio, libdrm, libjpeg-turbo, libpng, libwebp, libflac, fontconfig, freetype, zlib, libxml2, libxslt, libopus, libsnappy"
 # TODO: Split chromium-common and chromium-headless
 # TERMUX_PKG_DEPENDS+=", chromium-common"
@@ -90,7 +90,7 @@ termux_step_make_install() {
 # When set `enable_nacl = true`, the following error occurs.
 # ninja: error: 'native_client/toolchain/linux_x86/pnacl_newlib/bin/arm-nacl-objcopy', needed by 'nacl_irt_arm.nexe', missing and no known rule to make it.
 # If we want to enable NaCl, maybe we should build the toolchain of NaCl too.
-# But I don't think this is necessary. NaCl existing or not will take little 
+# But I don't think this is necessary. NaCl existing or not will take little
 # influence on Chromium. So I'd like to disable NaCl.
 # #############################################################################
 
